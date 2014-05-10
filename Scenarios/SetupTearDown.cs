@@ -31,7 +31,10 @@ namespace Scenario_ShoppingCart.Scenarios
 
 
 
-
+        ///<summary>
+        ///This method is to wait for an element to be visible.
+        ///<param name="locator">CssSelector: e.g.: "div[class='foo']"</param>
+        ///</summary>
        [Description("This property specifies the active Widget")]
         public void WaitForVisibleElement(string locator)
         {

@@ -8,3 +8,4 @@ C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\Scen
 C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\Scenario_ShoppingCart\bin\Debug\WebDriver.Support.xml
 C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\Scenario_ShoppingCart\obj\Debug\Scenario_ShoppingCart.dll
 C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\Scenario_ShoppingCart\obj\Debug\Scenario_ShoppingCart.pdb
+C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\Scenario_ShoppingCart\obj\Debug\Scenario_ShoppingCart.csprojResolveAssemblyReference.cache
