@@ -65,7 +65,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
             //Verify empty Shopping Cart.
             WaitForVisibleElement("div[class='message']");
             Assert.AreEqual("There are no products in your cart.", emptyCartMsg.Text);
-            return new ShoppingCartPage_PF(driver);
+            return this;
         }
 
         public ShoppingCartPage_PF Logout()
@@ -74,7 +74,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
             logoutBtn.Click();
             //Wait for login/password input field appeared after click.
             WaitForVisibleElement("input[id='modlgn-username']");
-            return new ShoppingCartPage_PF(driver);
+            return this;
         }
 
        

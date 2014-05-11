@@ -10,14 +10,11 @@ namespace Scenario_ShoppingCart.Scenarios
     public partial class Scenarios_Demo
     {
 
-        private IWebDriver driver;
+       private IWebDriver driver;
+       private string baseURL;
         
-        private string baseURL;
-        
-          
-       
        [TestInitialize]
-        public void SetupTest()
+       public void SetupTest()
         {
             string extension = @"C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\packages\firebug.xpi";
             FirefoxProfile ffProfile = new FirefoxProfile();
@@ -26,14 +23,14 @@ namespace Scenario_ShoppingCart.Scenarios
             baseURL = "http://demo.virtuemart.net";
             driver.Navigate().GoToUrl(baseURL + "/");
         }
-        [TestCleanup]
-        public void CleanUpTest()
+       [TestCleanup]
+       public void CleanUpTest()
         {
             driver.Close();
             driver.Dispose();
         }
 
-        public void WaitForVisibleElement(string locator)
+       public void WaitForVisibleElement(string locator)
         {
             //Wait for Shopping cart Page. Verify Items. and click on checkout button.
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

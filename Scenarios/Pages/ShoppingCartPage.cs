@@ -44,7 +44,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
             //Verify empty Shopping Cart.
             WaitForVisibleElement("div[class='message']");
             Assert.AreEqual("There are no products in your cart.", driver.FindElement(By.CssSelector("div[class='message']")).Text);
-            return new ShoppingCartPage(driver);
+            return this;
         }
 
         public ShoppingCartPage Logout()
@@ -53,7 +53,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
             driver.FindElement(By.CssSelector("input[value='Log out']")).Click();
             //Wait for login/password input field appeared after click.
             WaitForVisibleElement("input[id='modlgn-username']");
-            return new ShoppingCartPage(driver);
+            return this;
         }
     }
     
