@@ -13,7 +13,10 @@ namespace Scenario_ShoppingCart.Scenarios
         private IWebDriver driver;
         
         private string baseURL;
-        [TestInitialize]
+        
+          
+       
+       [TestInitialize]
         public void SetupTest()
         {
             string extension = @"C:\Users\Aditya\Documents\Visual Studio 2013\Projects\Scenario_ShoppingCart\packages\firebug.xpi";
@@ -21,6 +24,7 @@ namespace Scenario_ShoppingCart.Scenarios
             ffProfile.AddExtension(extension);
             driver = new FirefoxDriver(ffProfile);
             baseURL = "http://demo.virtuemart.net";
+            driver.Navigate().GoToUrl(baseURL + "/");
         }
         [TestCleanup]
         public void CleanUpTest()
@@ -29,19 +33,15 @@ namespace Scenario_ShoppingCart.Scenarios
             driver.Dispose();
         }
 
-
-
-        ///<summary>
-        ///This method is to wait for an element to be visible.
-        ///<param name="locator">CssSelector: e.g.: "div[class='foo']"</param>
-        ///</summary>
-       [Description("This property specifies the active Widget")]
         public void WaitForVisibleElement(string locator)
         {
             //Wait for Shopping cart Page. Verify Items. and click on checkout button.
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until<IWebElement>(ExpectedConditions.ElementIsVisible(By.CssSelector(locator)));
         }
+        
 
     }
+
+   
 }

@@ -4,13 +4,14 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-
+using OpenQA.Selenium.Support.PageObjects;
+using Scenario_ShoppingCart.Scenarios.Pages;
 namespace Scenario_ShoppingCart.Scenarios
 {
     public partial class Scenarios_Demo
     {
         [TestMethod]
-        public void VerifyShoppingCartBehavior1()
+        public void VerifyShoppingCartBehaviorRegular()
         {
                         
             #region Home page
@@ -79,6 +80,59 @@ namespace Scenario_ShoppingCart.Scenarios
             //Wait for login/password input field appeared after click.
             WaitForVisibleElement("input[id='modlgn-username']");
             #endregion
+            
         }
+
+        [TestMethod]
+        public void VerifyShoppingCartBehavior_PageObject()
+        {
+            HomePage hPage = new HomePage(driver);
+            
+            AlertPage alertPage = hPage.selectItem(driver);
+            
+            ShoppingCartPage cartPage = alertPage.ClickOnShowCart();
+            cartPage.verifyCartWithItems();
+            
+            YourAccountDetailPage adPage = cartPage.ProceedToCheckoutNow();
+            adPage.LoginToAccount();
+            
+            cartPage = adPage.GoToShoppingCartViaLink();
+            cartPage.EmptyCart();
+            cartPage.Logout();
+            
+           
+
+        }
+
+        [TestMethod]
+        public void VerifyShoppingCartBehavior_PageObjectWithFactory()
+        {
+            HomePage_PF hPage = new HomePage_PF(driver);
+
+            AlertPage_PF alertPage = hPage.selectItem(driver);
+
+            ShoppingCartPage_PF cartPage = alertPage.ClickOnShowCart();
+            cartPage.verifyCartWithItems();
+
+            YourAccountDetailPage_PF adPage = cartPage.ProceedToCheckoutNow();
+            adPage.LoginToAccount();
+
+            cartPage = adPage.GoToShoppingCartViaLink();
+            cartPage.EmptyCart();
+            cartPage.Logout();
+
+
+
+        }
+    
     }
-}
+
+    
+   
+    
+    
+    
+
+    
+    
+    }

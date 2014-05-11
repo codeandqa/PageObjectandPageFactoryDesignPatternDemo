@@ -60,9 +60,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Scenarios\HelperClass.cs" />
+    <Compile Include="Scenarios\Pages\AlertPage_PF.cs" />
+    <Compile Include="Scenarios\Pages\AlertPage.cs" />
+    <Compile Include="Scenarios\Pages\HomePage_PF.cs" />
+    <Compile Include="Scenarios\Pages\HomePage.cs" />
+    <Compile Include="Scenarios\Pages\ShoppingCartPage_PF.cs" />
+    <Compile Include="Scenarios\Pages\ShoppingCartPage.cs" />
+    <Compile Include="Scenarios\Pages\YourAccountDetailPage_PF.cs" />
+    <Compile Include="Scenarios\Pages\YourAccountDetailPage.cs" />
     <Compile Include="Scenarios\SetupTearDown.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenarios\VerifyShoppingCartbehavior.cs" />
+    <Compile Include="Scenarios\Scenarios_Demo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
