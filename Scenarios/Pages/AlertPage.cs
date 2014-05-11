@@ -23,7 +23,9 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
 
             //------------------Alert Page with other info. (I am considering this as page as there are other action we can perform on that alert)---------------------//
             //wait for alert screen and click on Show Cart link.
-            System.Threading.Thread.Sleep(2000);
+            WaitForVisibleElement("div[id='facebox']");
+            WebDriverWait wt = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            
             IWebElement alert = driver.FindElement(By.Id("facebox"));
             alert.FindElement(By.LinkText("Show Cart")).Click();
             return new ShoppingCartPage(driver);

@@ -21,8 +21,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
         [FindsBy(How = How.CssSelector, Using = "input[class='btn btn-success addtocart-button']")]
         private IWebElement AddCartButton;
 
-        public HomePage_PF(IWebDriver driver)
-            : base(driver)
+        public HomePage_PF(IWebDriver driver): base(driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
@@ -33,7 +32,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
 
             //Click on Computer Tab.
             computerTab.Click();
-            System.Threading.Thread.Sleep(2000);
+            WaitForVisibleElement("div[id='product-container'][style='display: block;']");
             //click on add to cart button.
             firstComptuerItemInGrid.FindElement(By.CssSelector("input[class='btn btn-success addtocart-button']")).Click();
             //AddCartButton.Click();

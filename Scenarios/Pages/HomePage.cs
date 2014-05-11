@@ -23,7 +23,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
 
             //Click on Computer Tab.
             driver.FindElement(By.CssSelector("div[id='product-presenter']>ul[id='category-names']>li:nth-child(2)")).Click();
-            System.Threading.Thread.Sleep(2000);
+            WaitForVisibleElement("div[id='product-container'][style='display: block;']");
             IWebElement rows = driver.FindElement(By.CssSelector("div[id='product-container'][style='display: block;']"));
             //click on add to cart button.
             rows.FindElement(By.CssSelector("input[class='btn btn-success addtocart-button']")).Click();

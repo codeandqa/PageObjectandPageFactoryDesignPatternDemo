@@ -26,7 +26,7 @@ namespace Scenario_ShoppingCart.Scenarios.Pages
         public ShoppingCartPage_PF ClickOnShowCart()
         {
             //wait for alert screen and click on Show Cart link.
-            System.Threading.Thread.Sleep(2000);
+            WaitForVisibleElement("div[id='facebox']");
             alert.FindElement(By.LinkText("Show Cart")).Click();
             return new ShoppingCartPage_PF(driver);
         }

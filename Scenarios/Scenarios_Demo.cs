@@ -19,7 +19,7 @@ namespace Scenario_ShoppingCart.Scenarios
             driver.Navigate().GoToUrl(baseURL + "/");
             //Click on Computer Tab.
             driver.FindElement(By.CssSelector("div[id='product-presenter']>ul[id='category-names']>li:nth-child(2)")).Click();
-            System.Threading.Thread.Sleep(2000);
+            WaitForVisibleElement("div[id='product-container'][style='display: block;']");
             #endregion
             
             #region Item Page.
@@ -30,7 +30,7 @@ namespace Scenario_ShoppingCart.Scenarios
             
             //------------------Alert Page with other info. (I am considering this as page as there are other action we can perform on that alert)---------------------//
             //wait for alert screen and click on Show Cart link.
-            System.Threading.Thread.Sleep(2000);
+            WaitForVisibleElement("div[id='facebox']");
             IWebElement alert = driver.FindElement(By.Id("facebox"));
             alert.FindElement(By.LinkText("Show Cart")).Click();
             #endregion
